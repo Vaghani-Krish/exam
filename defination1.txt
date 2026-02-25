@@ -1,0 +1,25 @@
+Variance – A measure of how far data values spread out from the average.
+
+Standard Deviation – The square root of variance showing how spread out the data is from the mean.
+
+Covariance – A measure of how two variables change together (whether they move in the same direction or not).
+
+Correlation – A statistical relationship that shows how two variables move together.
+
+Correlation Coefficient – A number between –1 and +1 that tells how strong and in what direction two variables are related.
+
+Aggregations – Combining multiple data values into a single summary value (like total, average). (common data concept)
+
+Normalisation – Scaling data into a common range so values are comparable. (standard data prep concept)
+
+Z-score/Standardisation – Converting data so it shows how many standard deviations a value is from the mean. (common stat definition)
+
+Histogram – A graph that shows how data values are distributed into groups (bins).
+
+Scatter Plot – A graph of dots showing the relationship between two numeric variables.
+
+Boxplot – A graphical summary that shows the middle, spread, and outliers of data.
+
+Frequency Distribution – A table or chart showing how often each value appears. (basic stat concept)
+
+Data Summarisation – Describing the main features of data in simple summaries.
