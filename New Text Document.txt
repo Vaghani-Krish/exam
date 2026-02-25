@@ -1,0 +1,69 @@
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+
+# dataset
+data = {
+    "Student_ID": ["S001","S002","S003","S004","S005","S006","S006"],
+    "Gender": ["Male","Female","Male","Female","Male","Female","Female"],
+    "Age": [20,21,20,22,21,23,23],
+    "Marks": [85,90,np.nan,75,85,88,88],
+    "Attendance": [90,95,85,80,90,92,92],
+    "Subject": ["Math","Science","Math","English","Science","Math","Math"]
+}
+
+df = pd.DataFrame(data)
+
+# first five rows
+print(df.head())
+
+# shape of dataset
+print(df.shape)
+
+# data types
+print(df.dtypes)
+
+# check missing values
+print(df.isnull().sum())
+
+# fill missing marks with mean
+df["Marks"] = df["Marks"].fillna(df["Marks"].mean())
+
+# remove duplicates
+df = df.drop_duplicates()
+
+# min max normalization
+df["Marks_Normalized"] = (df["Marks"] - df["Marks"].min()) / (df["Marks"].max() - df["Marks"].min())
+
+# statistics
+print("Mean:", df["Marks"].mean())
+print("Median:", df["Marks"].median())
+print("Mode:", df["Marks"].mode()[0])
+print("Variance:", df["Marks"].var())
+print("Standard Deviation:", df["Marks"].std())
+
+# frequency count
+print(df["Subject"].value_counts())
+print(df["Gender"].value_counts())
+
+# histogram
+plt.hist(df["Marks"])
+plt.show()
+
+# scatter plot
+plt.scatter(df["Attendance"], df["Marks"])
+plt.show()
+
+# box plot
+plt.boxplot(df["Marks"])
+plt.show()
+
+# correlation and covariance
+print(df[["Marks","Attendance"]].corr())
+print(df[["Marks","Attendance"]].cov())
+
+# average marks by subject
+print(df.groupby("Subject")["Marks"].mean())
+
+# average attendance by gender
+print(df.groupby("Gender")["Attendance"].mean())
